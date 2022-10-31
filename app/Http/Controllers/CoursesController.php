@@ -20,7 +20,6 @@ class CoursesController extends Controller
     public function index()
     {
         $courses = Courses::with('faculties')->get();
-//        dd($courses);
         return view('Courses.courses', compact('courses'));
     }
 

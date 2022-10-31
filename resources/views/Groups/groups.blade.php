@@ -111,7 +111,7 @@
                                     <td>{{substr($data_courses->created_at, 0, 20)}}</td>
 
                                     <td>
-                                        <a href="" class="btn btn-success">View</a>
+{{--                                        <a href="" class="btn btn-success">View</a>--}}
                                         <a href="{{route('groups.edit', $data_courses)}}"
                                            class="btn btn-primary">Edit</a>
                                         <form class="d-inline" action="{{route('groups.destroy', $data_courses->id)}}"

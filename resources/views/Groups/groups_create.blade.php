@@ -91,11 +91,26 @@
                                             Looks good!
                                         </div>
                                     </div>
+{{--                                    <div class="col-md-12">--}}
+{{--                                        <div class="form-group">--}}
+{{--                                            <label for=""></label><select name="facult_id" id=""--}}
+{{--                                                                          class="form-control mt-1">--}}
+{{--                                                <option hidden>Select Faculties</option>--}}
+{{--                                                @foreach($facult_id as $course)--}}
+{{--                                                    <option value="{{$course->id}}">{{$course->name}}</option>--}}
+
+{{--                                                @endforeach--}}
+
+{{--                                            </select>--}}
+
+{{--                                        </div>--}}
+
+{{--                                    </div>--}}
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for=""></label><select name="courses_id" id=""
                                                                           class="form-control mt-1">
-                                                <option hidden>Select Category</option>
+                                                <option hidden>Select Courses</option>
 
                                                 @foreach($courses_id as $course)
                                                     <option value="{{$course->id}}">{{$course->name}}</option>

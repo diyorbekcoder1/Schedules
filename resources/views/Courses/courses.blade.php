@@ -100,15 +100,15 @@
                                     <td>{{$data_c->faculties->name}}</td>
                                     <td>
                                 <span style=" padding: 10px 20px 10px 20px; border-radius: 30px; " ;
-                                      class="badge bg-{{ $data_c->status === 1 ? 'success' : 'danger' }}">
-                                    {{$data_c->status === 1 ? 'active' : 'inactive'}}
+                                      class="badge bg-{{ $data_c->status == 1 ? 'success' : 'danger' }}">
+                                    {{$data_c->status == 1 ? 'active' : 'inactive'}}
                                 </span>
                                     </td>
                                     <td>{{substr($data_c->created_at, 0, 20)}}</td>
 
                                     <td>
-                                        <a href=""
-                                           class="btn btn-success">View</a>
+{{--                                        <a href=""--}}
+{{--                                           class="btn btn-success">View</a>--}}
                                         <a href="{{route('courses.edit', $data_c)}}" class="btn btn-primary">Edit</a>
                                         <form class="d-inline" action="{{route('courses.destroy', $data_c->id)}}"
                                               method="post">

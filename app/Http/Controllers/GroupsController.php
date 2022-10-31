@@ -7,6 +7,7 @@ use App\Http\Requests\GroupsRequest;
 use App\Models\Courses;
 use App\Models\Faculties;
 use App\Models\Groups;
+use App\Models\Week;
 use Illuminate\Http\Request;
 
 class GroupsController extends Controller
@@ -14,9 +15,11 @@ class GroupsController extends Controller
     public function groupSchedule($facult_id, $course_id, $group_id)
     {
         $group = Groups::where('id', $group_id)->with('schedules')->first();
+        $weeks = Week::all();
+        $facult_id=Faculties::all();
         $schedules = $group->schedules;
 //        dd($schedules);
-        return view('Schedu.schedules', compact('schedules'));
+        return view('Schedu.schedules', compact('weeks', 'schedules','facult_id'));
     }
 
     public function index()

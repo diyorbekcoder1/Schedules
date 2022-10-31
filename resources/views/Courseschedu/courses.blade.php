@@ -11,7 +11,7 @@
 
     <!-- Favicons -->
     <link href="{{asset('assets/img/logos.png')}}" rel="icon">
-    <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+    <link href="{{asset('assets/img/logo.png')}}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img "
-                     style='background-image: url("assets/img/why-us.png");' data-aos="zoom-in" data-aos-delay="150">
+                     style='background-image: url("{{asset('assets/img/intro-img.svg')}}");' data-aos="zoom-in" data-aos-delay="150">
                     &nbsp;
                 </div>
             </div>

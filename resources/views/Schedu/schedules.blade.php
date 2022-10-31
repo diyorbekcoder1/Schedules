@@ -56,18 +56,19 @@
             <div class="row d-flex">
 
 
+                @if(isset($weeks))
+                    @foreach($weeks as $index => $week)
 
-                @if(isset($schedules))
-                    @foreach($schedules as $key => $group)
-                        <div class="col-lg-12 mb-5 mt-lg-0">
+                        <div style="text-align: center" class="col-lg-12 mb-5 ">
                             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
 
-                                <div class="member-info">
+                                <div  class="member-info">
 
-                                    <table class="table">
+                                    <table  class="table table-bordered ">
                                         <thead>
-                                        <tr>
+                                        <tr class="col-lg-12 mb-5 ">
                                             <th scope="col">№</th>
+{{--                                            <th scope="col">Hafta</th>--}}
                                             <th scope="col">Kirish</th>
                                             <th scope="col">Chiqish</th>
                                             <th scope="col">Fan nomi</th>
@@ -78,18 +79,26 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
+                                        @foreach($schedules as $key => $schedule)
+                                            <tr >
 
-                                            <th scope="row">{{++$key}}</th>
-                                            <td>{{$group->start_lesson}}</td>
-                                            <td>{{$group->end_lesson}}</td>
-                                            <td>{{$group->science_name}}</td>
-                                            <td>{{$group->room}}</td>
-                                            <td>{{$group->science_type}}</td>
-                                            <td>{{$group->teacher}}</td>
+                                                @php
+                                                    if($schedule->week_id == $week->id){
+                                                @endphp
 
-
-                                        </tr>
+                                                <th scope="row">{{++$key}}</th>
+{{--                                                <td>{{$schedule->week->name}}</td>--}}
+                                                <td>{{$schedule->start_lesson}}</td>
+                                                <td>{{$schedule->end_lesson}}</td>
+                                                <td>{{$schedule->science_name}}</td>
+                                                <td>{{$schedule->room}}</td>
+                                                <td>{{$schedule->science_type}}</td>
+                                                <td>{{$schedule->teacher}}</td>
+                                                @php
+                                                    }
+                                                @endphp
+                                            </tr>
+                                        @endforeach
 
 
                                         </tbody>

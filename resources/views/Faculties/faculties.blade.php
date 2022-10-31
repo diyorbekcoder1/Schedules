@@ -109,7 +109,7 @@
                                     <td>{{substr($data_c->created_at, 0, 20)}}</td>
 
                                     <td>
-                                        <a href="" class="btn btn-success">View</a>
+{{--                                        <a href="" class="btn btn-success">View</a>--}}
                                         <a href="{{route('faculties.edit', $data_c)}}" class="btn btn-primary">Edit</a>
                                         <form class="d-inline" action="{{route('faculties.destroy', $data_c->id)}}"
                                               method="post">
@@ -132,9 +132,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="d-flex justify-content-center">
-                    {!! $posts->links() !!}
-                </div>
+
 
             </div>
         </div>

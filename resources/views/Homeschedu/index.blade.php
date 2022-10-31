@@ -40,7 +40,7 @@
 
 
   <!-- ======= Hero Section ======= -->
-  <section style="height: 580px;" id="hero" class="d-flex align-items-center">
+  <section style="height: 100%;" id="hero" class="d-flex align-items-center">
 
     <div class="container text-center">
       <div class="row ">

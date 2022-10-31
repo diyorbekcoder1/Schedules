@@ -41,11 +41,11 @@
 <body>
 
 
-<main id="main">
+
 
 
     <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us section-bg">
+    <section style="height: 100%" id="why-us" class="why-us section-bg">
         <div class="container-fluid" data-aos="fade-up">
 
             <div class="row">
@@ -88,7 +88,7 @@
     </section><!-- End Why Us Section -->
 
 
-</main><!-- End #main -->
+
 
 
 <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>
