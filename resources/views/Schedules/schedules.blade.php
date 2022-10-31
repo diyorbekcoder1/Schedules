@@ -66,7 +66,7 @@
             @endif
             <div class="row">
                 <div class="title"> <a
-                        class="btn btn-primary mr-1 mb-1" href="{{route('schedules.create')}}">schedules add</a>
+                        class="btn btn-primary mr-1 mb-1" href="{{route('schedules.create')}}">Schedules add</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped table-hover">

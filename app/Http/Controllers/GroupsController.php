@@ -16,10 +16,10 @@ class GroupsController extends Controller
     {
         $group = Groups::where('id', $group_id)->with('schedules')->first();
         $weeks = Week::all();
-        $facult_id=Faculties::all();
+
         $schedules = $group->schedules;
-//        dd($schedules);
-        return view('Schedu.schedules', compact('weeks', 'schedules','facult_id'));
+//        dd($weeks);
+        return view('Schedu.schedules', compact('weeks', 'schedules'));
     }
 
     public function index()

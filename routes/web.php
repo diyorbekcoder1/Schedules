@@ -23,7 +23,7 @@ Route::get('/facultyId-{facult_id}/course-{course_id}', [\App\Http\Controllers\C
 Route::get('/facultyId-{facult_id}/course-{course_id}/groupId-{group_id}', [\App\Http\Controllers\GroupsController::class, 'groupSchedule'])->name('groupSchedule');
 
 
-Route::group(['middleware'=>['auth:web']], function(){
+Route::group(['middleware' => ['auth:web']], function () {
     Route::get('/admin', [\App\Http\Controllers\ContactController::class, 'index'])->name('owner');
     Route::resource('/owner', \App\Http\Controllers\ContactController::class);
     Route::resource('/faculties', \App\Http\Controllers\FacultiesController::class);

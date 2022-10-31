@@ -61,14 +61,16 @@
 
                         <div style="text-align: center" class="col-lg-12 mb-5 ">
                             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
+                                <div>
+                                    <h3>{{ $week->name }}</h3>
+                                </div>
+                                <div class="member-info">
 
-                                <div  class="member-info">
-
-                                    <table  class="table table-bordered ">
+                                    <table class="table table-bordered ">
                                         <thead>
                                         <tr class="col-lg-12 mb-5 ">
                                             <th scope="col">№</th>
-{{--                                            <th scope="col">Hafta</th>--}}
+                                            {{--                                            <th scope="col">Hafta</th>--}}
                                             <th scope="col">Kirish</th>
                                             <th scope="col">Chiqish</th>
                                             <th scope="col">Fan nomi</th>
@@ -79,15 +81,16 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+
                                         @foreach($schedules as $key => $schedule)
-                                            <tr >
+                                            <tr>
 
                                                 @php
                                                     if($schedule->week_id == $week->id){
                                                 @endphp
 
                                                 <th scope="row">{{++$key}}</th>
-{{--                                                <td>{{$schedule->week->name}}</td>--}}
+                                                {{--                                                <td>{{$schedule->week->name}}</td>--}}
                                                 <td>{{$schedule->start_lesson}}</td>
                                                 <td>{{$schedule->end_lesson}}</td>
                                                 <td>{{$schedule->science_name}}</td>
