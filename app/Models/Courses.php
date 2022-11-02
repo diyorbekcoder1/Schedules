@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 class Courses extends Model
 {
     use HasFactory;
-
+    protected $fillable=['name','status'];
     protected $guarded = [];
 
     public function faculties()
@@ -27,5 +27,6 @@ class Courses extends Model
         return $this->hasMany(Groups::class, 'courses_id');
 
     }
+
 
 }

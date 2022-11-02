@@ -35,7 +35,7 @@
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/style.css')}}">
     <!-- END: Custom CSS-->
 
 </head>
@@ -104,8 +104,8 @@
                                                     <label for="user-password">Password</label>
                                                 </fieldset>
 
-                                                <a href="{{route('register')}}"
-                                                   class="btn btn-outline-primary float-left btn-inline">Register</a>
+{{--                                                <a href="{{route('register')}}"--}}
+{{--                                                   class="btn btn-outline-primary float-left btn-inline">Register</a>--}}
                                                 <button type="submit" class="btn btn-primary float-right btn-inline">
                                                     Login
                                                 </button>

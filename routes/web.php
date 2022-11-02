@@ -32,9 +32,6 @@ Route::group(['middleware' => ['auth:web']], function () {
     Route::resource('/schedules', \App\Http\Controllers\SchedulesController::class);
     Route::resource('/week', \App\Http\Controllers\WeekController::class);
     Route::get('/register', [AuthController::class, 'register_page'])->name('register');
-
-    Route::get('/faculties/courses/{id}', [CoursesController::class, 'viewCourses'])->name('view');
-
     Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 });
 Route::get('/login', [AuthController::class, 'login_page'])->name('login');

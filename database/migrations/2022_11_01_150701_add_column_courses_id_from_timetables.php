@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('groups', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->boolean('status');
-            $table->timestamps();
+        Schema::table('timetables', function (Blueprint $table) {
+            $table->unsignedBigInteger('courses_id')->nullable();
+            $table->foreign('courses_id')->references('id')->on('courses');
         });
     }
 
@@ -28,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('groups');
+        Schema::table('timetables', function (Blueprint $table) {
+            $table->dropColumn('courses_id');
+            $table->dropForeign('courses_id');
+        });
     }
 };

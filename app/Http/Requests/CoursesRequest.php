@@ -26,7 +26,7 @@ class CoursesRequest extends FormRequest
         return [
             'name' => ['string', 'max:255', 'required'],
             'status' => ['string', 'required'],
-            'facult_id'=>['required'],
+
         ];
     }
 }

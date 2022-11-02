@@ -25,7 +25,7 @@ class SchedulesController extends Controller
     {
         $grops_id = Groups::all();
         $week_id = Week::all();
-        return view('Schedules.schedules_create', compact('grops_id','week_id'));
+        return view('Schedules.schedules_create', compact('grops_id', 'week_id'));
     }
 
     public function store(SchedulesRequest $request)

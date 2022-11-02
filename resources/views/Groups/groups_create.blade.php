@@ -91,27 +91,11 @@
                                             Looks good!
                                         </div>
                                     </div>
-{{--                                    <div class="col-md-12">--}}
-{{--                                        <div class="form-group">--}}
-{{--                                            <label for=""></label><select name="facult_id" id=""--}}
-{{--                                                                          class="form-control mt-1">--}}
-{{--                                                <option hidden>Select Faculties</option>--}}
-{{--                                                @foreach($facult_id as $course)--}}
-{{--                                                    <option value="{{$course->id}}">{{$course->name}}</option>--}}
-
-{{--                                                @endforeach--}}
-
-{{--                                            </select>--}}
-
-{{--                                        </div>--}}
-
-{{--                                    </div>--}}
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for=""></label><select name="courses_id" id=""
                                                                           class="form-control mt-1">
                                                 <option hidden>Select Courses</option>
-
                                                 @foreach($courses_id as $course)
                                                     <option value="{{$course->id}}">{{$course->name}}</option>
 
@@ -122,6 +106,14 @@
                                         </div>
 
                                     </div>
+{{--                                    <div class="col-12 ">--}}
+{{--                                        <label for="validationTooltip01">Courses</label>--}}
+{{--                                        <select class="form-control " name="courses_id">--}}
+
+{{--                                            <option value="3">3-kurs</option>--}}
+{{--                                            <option value="4">4-kurs</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
                                     <div class="col-12 ">
                                         <label for="validationTooltip01">Status</label>
                                         <select class="form-control " name="status">

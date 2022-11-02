@@ -18,4 +18,7 @@ class Faculties extends Model
         return $this->hasMany(Courses::class, 'facult_id');
 
     }
+
+
+
 }

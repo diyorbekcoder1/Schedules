@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('Kirish');
-            $table->string('Chiqish');
-            $table->string('Fan nomi');
-            $table->string('Xona');
-            $table->string('Fan turi');
-            $table->string("O'qituvchi");
+            $table->string('start_lesson');
+            $table->string('end_lesson');
+            $table->string('science_name');
+            $table->string('room');
+            $table->string('science_type');
+            $table->string("teacher");
+            $table->boolean('status');
             $table->timestamps();
         });
     }

@@ -25,7 +25,7 @@ class GroupsController extends Controller
     public function index()
     {
         $posts_groups = Groups::with('course')->get();
-//                dd($posts_groups);
+
         return view('Groups.groups', compact('posts_groups'));
     }
 
@@ -34,7 +34,7 @@ class GroupsController extends Controller
 
     {
         $courses_id = Courses::all();
-        return view('Groups.groups_create',compact('courses_id'));
+        return view('Groups.groups_create', compact('courses_id'));
     }
 
     public function store(GroupsRequest $request)
@@ -57,8 +57,6 @@ class GroupsController extends Controller
         ]);
         return redirect()->route('groups.index')->with('message', 'Post successfully Create.');
     }
-
-
 
 
     public function edit($id)
