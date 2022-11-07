@@ -73,7 +73,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">schedules add </h4>
+                        <h4 class="card-title">Schedules </h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
@@ -83,54 +83,12 @@
                                 @method('POST')
                                 @csrf
 
-                                <div class="col-md-12 col-12 ">
-                                    <label for="validationTooltip01">Start_lesson</label>
-                                    <input type="text" class="form-control" name="start_lesson" id="validationTooltip01"
-                                           required>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-12 ">
-                                    <label for="validationTooltip01">End_lesson</label>
-                                    <input type="text" class="form-control" name="end_lesson" id="validationTooltip01"
-                                           required>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-12 ">
-                                    <label for="validationTooltip01">Science_name</label>
-                                    <input type="text" class="form-control" name="science_name" id="validationTooltip01"
-                                           required>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-12 ">
-                                    <label for="validationTooltip01">Room</label>
-                                    <input type="text" class="form-control" name="room" id="validationTooltip01"
-                                           required>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-12 ">
-                                    <label for="validationTooltip01">Science_type</label>
-                                    <input type="text" class="form-control" name="science_type" id="validationTooltip01"
-                                           required>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-12 ">
-                                    <label for="validationTooltip01">Teacher</label>
-                                    <input type="text" class="form-control" name="teacher" id="validationTooltip01"
-                                           required>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
+
+
+
+
+
+
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for=""></label><select name="group_id" id="" class="form-control mt-1">
@@ -148,31 +106,21 @@
                                     </div>
 
                                 </div>
+
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for=""></label><select name="week_id" id="" class="form-control mt-1">
-                                            <option hidden>Select Weeks</option>
-
-                                            @foreach($week_id as $grops)
-                                                <option value="{{$grops->id}}">{{$grops->name}}</option>
-
-                                            @endforeach
-
-                                        </select>
-                                        @error('description')
+                                        <label for="form_message">Files *</label>
+                                        <input id="form_message" type="file" name="image"
+                                               class="form-control @error('image') is-invalid @enderror"
+                                               placeholder="Please enter your image *"
+                                               data-error="Image is required.">
+                                        @error('image')
                                         <span style="color: red">{{$message}} </span>
                                         @enderror
                                     </div>
 
                                 </div>
-                                <div class="col-12 ">
-                                    <label for="validationTooltip01">Status</label>
-                                    <select class="form-control " name="status">
 
-                                        <option value="1">Active</option>
-                                        <option value="0">No Active</option>
-                                    </select>
-                                </div>
 
 
                                 <button class="btn btn-primary mt-4" type="submit">Submit</button>

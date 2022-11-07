@@ -15,11 +15,9 @@ class GroupsController extends Controller
     public function groupSchedule($facult_id, $course_id, $group_id)
     {
         $group = Groups::where('id', $group_id)->with('schedules')->first();
-        $weeks = Week::all();
-
-        $schedules = $group->schedules;
-//        dd($weeks);
-        return view('Schedu.schedules', compact('weeks', 'schedules'));
+        $sched = $group->schedules;
+//        dd($schedules);
+        return view('Schedu.schedules', compact( 'sched'));
     }
 
     public function index()

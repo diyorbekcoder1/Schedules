@@ -24,12 +24,8 @@ class SchedulesRequest extends FormRequest
     public function rules()
     {
         return [
-            'start_lesson' => ['string', 'max:255', 'required'],
-            'end_lesson' => ['string','required'],
-            'science_name' => ['string', 'max:255', 'required'],
-            'room' => ['string','required'],
-            'science_type' => ['string','required'],
-            'teacher' => ['string','required'],
+
+            'files' => ['string','required'],
         ];
     }
 }

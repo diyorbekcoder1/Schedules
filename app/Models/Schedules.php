@@ -17,10 +17,5 @@ class Schedules extends Model
         return $this->belongsTo(Groups::class, 'group_id');
 
     }
-    public function week()
-    {
 
-        return $this->belongsTo(Week::class, 'week_id');
-
-    }
 }

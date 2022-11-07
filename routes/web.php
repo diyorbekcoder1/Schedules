@@ -16,7 +16,7 @@ use App\Http\Controllers\HomescheduController;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\FacultiescheduController::class, 'home']);
+Route::get('/', [\App\Http\Controllers\FacultiescheduController::class, 'home'])->name('log');
 Route::get('/faculty', [\App\Http\Controllers\FacultiescheduController::class, 'faculties'])->name('faculties');
 Route::get('/facultyId-{facult_id}', [\App\Http\Controllers\FacultiescheduController::class, 'facultCourses'])->name('facultCourses');
 Route::get('/facultyId-{facult_id}/course-{course_id}', [\App\Http\Controllers\CoursesController::class, 'courseGroups'])->name('courseGroups');

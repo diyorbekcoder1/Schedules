@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\FacultiesRequest;
+use App\Traits\FileUpload;
 use App\Http\Requests\SchedulesRequest;
-use App\Models\Courses;
-use App\Models\Faculties;
+
 use App\Models\Groups;
 use App\Models\Schedules;
-use App\Models\Week;
 use Illuminate\Http\Request;
+
 
 class SchedulesController extends Controller
 {
+    use FileUpload;
+
     public function index()
     {
 
@@ -24,48 +25,26 @@ class SchedulesController extends Controller
     public function create()
     {
         $grops_id = Groups::all();
-        $week_id = Week::all();
-        return view('Schedules.schedules_create', compact('grops_id', 'week_id'));
+        return view('Schedules.schedules_create', compact('grops_id'));
     }
 
-    public function store(SchedulesRequest $request)
+    public function store(Request $request)
     {
-        $request->validate([
-            'start_lesson' => 'required',
-            'end_lesson' => 'required',
-            'science_name' => 'required',
-            'room' => 'required',
-            'science_type' => 'required',
-            'teacher' => 'required',
-            'status' => 'required',
-            'group_id' => 'required',
-            'week_id' => 'required',
-        ],
-            [
-                'start_lesson' => 'required',
-                'end_lesson' => 'required',
-                'science_name' => 'required',
-                'room' => 'required',
-                'science_type' => 'required',
-                'teacher' => 'required',
-                'status' => 'required',
-                'group_id' => 'required',
-                'week_id' => 'required',
-                'group_id.required' => 'Select Group_id',
-                'week_id.required' => 'Select Group_id',
-            ]);
+        $data = $request->validate([
 
-        Schedules::insert([
-            'start_lesson' => $request->start_lesson,
-            'end_lesson' => $request->end_lesson,
-            'science_name' => $request->science_name,
-            'room' => $request->room,
-            'science_type' => $request->science_type,
-            'teacher' => $request->teacher,
-            'status' => $request->status,
-            'group_id' => $request->group_id,
-            'week_id' => $request->week_id,
-        ]);
+
+
+                'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg,pdf', 'max:2048'],
+                'group_id' => ['required', 'integer', 'exists:groups,id']
+
+
+            ]
+
+
+        );
+        $data = $this->fileUpload($data);
+        Schedules::create($data);
+
         return redirect()->route('schedules.index')->with('message', 'Post successfully Create.');
     }
 
@@ -92,6 +71,7 @@ class SchedulesController extends Controller
         $request = request()->merge(['id' => $id]);
         $request->validate(['id' => 'required|exists:schedules,id']);
         $post = Schedules::find($id);
+//        unlink('storage/images/' . $post->image);
         $post->delete();
         return redirect()->route('schedules.index')->with('message', 'Post successfully delete.');
     }

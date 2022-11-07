@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img "
-                     style='background-image: url("assets/img/why-us.png");' data-aos="zoom-in" data-aos-delay="150">
+                     style='background-image: url("{{asset('newassets/img/why-us.png')}}");' data-aos="zoom-in"  data-aos-delay="200">
                     &nbsp;
                 </div>
             </div>

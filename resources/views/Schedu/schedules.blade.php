@@ -40,158 +40,49 @@
 
 <body>
 
+<div class="container">
+    <main id="main">
 
-<main id="main">
+        <section class="section">
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="card">
+
+                            <div class="section-title">
+                                <h2>Namangan muhandistlik-qurilish inistituti</h2>
+                                <p>Dars jadvali</p>
+                            </div>
+                            @if(isset($sched))
+                                @foreach($sched as  $schedule)
+
+                                    <div class="card ">
+                                        <img src="{{asset('storage/images/'.$schedule->image)}}" class="card-img-top"
+                                             alt="...">
+                                        <div style="text-align: center" class="card-body">
 
 
-    <!-- ======= Team Section ======= -->
-    <section class="section">
-        <div class="section-body">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="section-title">
-                            <h2>Namangan muhandistlik-qurilish inistituti</h2>
-                            <p>Dars jadvali</p>
+                                        </div>
+                                    </div>
+
+                                @endforeach
+
+                            @endif
+
                         </div>
-                        @if(isset($weeks))
-                            @foreach($weeks as $index => $week)
-
-                                <div class="card-body">
-                                    <div style="text-align: center">
-                                        <h3>{{ $week->name }}</h3>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-hover" id="tableExport"
-                                               style="width:100%;">
-                                            <thead>
-                                            <tr>
-                                                <th scope="col">№</th>
-                                                <th scope="col">Kirish</th>
-                                                <th scope="col">Chiqish</th>
-                                                <th scope="col">Fan nomi</th>
-                                                <th scope="col">Xona</th>
-                                                <th scope="col">Fan turi</th>
-                                                <th scope="col">O'qituvchi</th>
-
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            @foreach($schedules as $key => $schedule)
-                                                <tr>
-
-                                                    @php
-                                                        if($schedule->week_id == $week->id){
-                                                    @endphp
-
-                                                    <th scope="row">{{++$key}}</th>
-                                                    {{--                                                <td>{{$schedule->week->name}}</td>--}}
-                                                    <td>{{$schedule->start_lesson}}</td>
-                                                    <td>{{$schedule->end_lesson}}</td>
-                                                    <td>{{$schedule->science_name}}</td>
-                                                    <td>{{$schedule->room}}</td>
-                                                    <td>{{$schedule->science_type}}</td>
-                                                    <td>{{$schedule->teacher}}</td>
-                                                    @php
-                                                        }
-                                                    @endphp
-                                                </tr>
-                                            @endforeach
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-                            @endforeach
-
-                        @endif
 
                     </div>
+
+
                 </div>
             </div>
-        </div>
-    </section>
-
-{{--    <section id="team" class="team section-bg">--}}
-{{--        <div class="container" data-aos="fade-up">--}}
-
-{{--            <div class="section-title">--}}
-{{--                <h2>Namangan muhandistlik-qurilish inistituti</h2>--}}
-{{--                <p>Dars jadvali</p>--}}
-{{--            </div>--}}
-
-{{--            <div class="row d-flex">--}}
+        </section>
 
 
-{{--                @if(isset($weeks))--}}
-{{--                    @foreach($weeks as $index => $week)--}}
+    </main><!-- End #main -->
+</div>
 
-{{--                        <div style="text-align: center" class="col-lg-12 mb-5 ">--}}
-{{--                            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">--}}
-
-{{--                                <div class="member-info">--}}
-
-{{--                                    <table class="table table-bordered ">--}}
-{{--                                        <div>--}}
-{{--                                            <h3>{{ $week->name }}</h3>--}}
-{{--                                        </div>--}}
-{{--                                        <thead>--}}
-{{--                                        <tr class="col-lg-12 mb-5 ">--}}
-{{--                                            <th scope="col">№</th>--}}
-
-{{--                                            <th scope="col">Kirish</th>--}}
-{{--                                            <th scope="col">Chiqish</th>--}}
-{{--                                            <th scope="col">Fan nomi</th>--}}
-{{--                                            <th scope="col">Xona</th>--}}
-{{--                                            <th scope="col">Fan turi</th>--}}
-{{--                                            <th scope="col">O'qituvchi</th>--}}
-
-{{--                                        </tr>--}}
-{{--                                        </thead>--}}
-{{--                                        <tbody>--}}
-
-{{--                                        @foreach($schedules as $key => $schedule)--}}
-{{--                                            <tr>--}}
-
-{{--                                                @php--}}
-{{--                                                    if($schedule->week_id == $week->id){--}}
-{{--                                                @endphp--}}
-
-{{--                                                <th scope="row">{{++$key}}</th>--}}
-{{--                                                --}}{{--                                                <td>{{$schedule->week->name}}</td>--}}
-{{--                                                <td>{{$schedule->start_lesson}}</td>--}}
-{{--                                                <td>{{$schedule->end_lesson}}</td>--}}
-{{--                                                <td>{{$schedule->science_name}}</td>--}}
-{{--                                                <td>{{$schedule->room}}</td>--}}
-{{--                                                <td>{{$schedule->science_type}}</td>--}}
-{{--                                                <td>{{$schedule->teacher}}</td>--}}
-{{--                                                @php--}}
-{{--                                                    }--}}
-{{--                                                @endphp--}}
-{{--                                            </tr>--}}
-{{--                                        @endforeach--}}
-
-
-{{--                                        </tbody>--}}
-{{--                                    </table>--}}
-
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                    @endforeach--}}
-
-{{--                @endif--}}
-
-
-{{--            </div>--}}
-
-{{--        </div>--}}
-{{--    </section><!-- End Team Section -->--}}
-
-
-</main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
 
